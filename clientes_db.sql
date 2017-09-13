@@ -42,9 +42,9 @@ CREATE TABLE IF NOT EXISTS `clientes` (
 --
 
 INSERT INTO `clientes` (`id`, `apellido`, `nombre`, `activo`, `fechnac`, `nacionalidad_id`) VALUES
-(6, 'Lares', 'Ivo', 1, '1994-09-06', 1),
-(7, 'Porraz', 'Nicolas', 0, '1986-02-25', 1),
-(8, 'Lares', 'Milton', 1, '1989-03-03', 2);
+(1, 'Lares', 'Ivo', 1, '1994-09-06', 1),
+(2, 'Porraz', 'Nicolas', 0, '1986-02-25', 1),
+(3, 'Lares', 'Milton', 1, '1989-03-03', 2);
 
 -- --------------------------------------------------------
 
