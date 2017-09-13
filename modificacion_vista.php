@@ -1,6 +1,6 @@
 <?php require "layout_top.php";?>
 <fieldset>
-	<legend>Procesar formulario</legend>
+	<legend>Modificar un Usuario</legend>
 	<form method="post" action="">
 		<?php if($form->tieneErrores()):?>
 		<div class="alert alert-danger">
@@ -50,7 +50,7 @@
 		</div>
 		
 		
-		<p><button type="submit" class="btn btn-primary">Procesar formulario</button></p>
+		<p><button type="submit" class="btn btn-primary">Modificar</button></p>
 	</form>
 	  <a href="inicio.php">Volver al inicio</a>
 </fieldset>
