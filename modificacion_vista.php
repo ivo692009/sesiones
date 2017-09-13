@@ -52,5 +52,6 @@
 		
 		<p><button type="submit" class="btn btn-primary">Procesar formulario</button></p>
 	</form>
+	  <a href="inicio.php">Volver al inicio</a>
 </fieldset>
 <?php require "layout_bottom.php";?>

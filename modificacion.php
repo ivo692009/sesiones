@@ -11,6 +11,7 @@ require_once 'ClienteForm.php';
     
     if (!empty($_GET)) {
         $id=$_GET['id'];
+        $_SESSION['id'] = $id;
         require_once 'buscar_persona.php';
     }
 
