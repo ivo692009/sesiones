@@ -7,24 +7,31 @@
 			Se encontraron errores al procesar el formulario.
 		</div>
 		<?php endif;?>
+		<?php foreach($persona as $p):
+		$Nnombre = $p->nombre;
+		$Napellido = $p->apellido;
+		$Nfechnac = $p->fechnac;
+		$Nactivo = $p->activo;
+		$Nnacionalidad = $p->nacionalidad_id;
+		endforeach; ?>
 		<?php $tiene_error = $form->tieneError('nombre') ? "has-error" : "";?>
 		<div class="form-group <?php echo $tiene_error;?>">
 			<label class="control-label" for="nombre">Nombre </label>
-			<input type="text" class="form-control" name="nombre" id="nombre" value="<?php echo $form->getValor("nombre");?>">
+			<input type="text" class="form-control" name="nombre" id="nombre" value="<?php if(!empty($p)){echo $Nnombre;} else{echo $form->getValor("nombre");}?>">
 			<span class="help-block"><?php echo $form->getError('nombre');?></span>
 		</div>
 
 		<?php $tiene_error = $form->tieneError('apellido') ? "has-error" : "";?>
 		<div class="form-group <?php echo $tiene_error;?>">
 			<label class="control-label" for="apellido">apellido </label>
-			<input type="text" class="form-control" name="apellido" id="apellido" value="<?php echo $form->getValor("apellido");?>">
+			<input type="text" class="form-control" name="apellido" id="apellido" value="<?php if(!empty($p)){echo $Napellido;} else{echo $form->getValor("apellido");}?>">
 			<span class="help-block"><?php echo $form->getError('apellido');?></span>
 		</div>
 		
 		<?php $tiene_error = $form->tieneError('fecha') ? "has-error" : "";?>
 		<div class="form-group <?php echo $tiene_error;?>">
 			<label class="control-label" for="fecha">fecha </label>
-			<input type="date" class="form-control" name="fecha" id="fecha" value="<?php echo $form->getValor("fecha");?>">
+			<input type="date" class="form-control" name="fecha" id="fecha" value="<?php if(!empty($p)){echo $Nfechnac;} else{echo $form->getValor("fecha");}?>">
 			<span class="help-block"><?php echo $form->getError('fecha');?></span>
 		</div>
 
@@ -34,7 +41,7 @@
 			<select class="form-control" name="categoria" id="categoria">
 				<option value=""></option> 
 				<?php foreach($form->categorias as $key => $item):?>
-					<option value="<?php echo $key;?>" <?php echo $form->getSelected('categoria', $key);?>><?php echo $item;?></option> 
+					<option value="<?php echo $key;?>" <?php if(!empty($p)){if($Nnacionalidad == $key){echo "selected";}} else{echo $form->getSelected('categoria', $key);}?>><?php echo $item;?></option> 
 				<?php endforeach;?>
 			</select>
 			<span class="help-block"><?php echo $form->getError('categoria');?></span>
@@ -44,7 +51,7 @@
 		<div class="<?php echo $tiene_error;?>">
 			<div class="checkbox">
 			<label>
-				<input type="checkbox" name="vigente" id="vigente" value="1" <?php echo $form->getChecked('vigente');?>>
+				<input type="checkbox" name="vigente" id="vigente" value="1" <?php if(!empty($p)){if($Nactivo == 1){echo "checked";}} else{echo $form->getChecked('vigente');}?>>
 			Vigente
 			</label>
 		</div>
